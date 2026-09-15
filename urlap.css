@@ -1,0 +1,48 @@
+nav ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  background-color: #1e293b; 
+  border-radius: 5px; /* Lekerekített sarkok */
+  justify-content: baseline; 
+  gap: 20px;
+}
+
+
+
+
+nav a {
+  display: block; /* Hogy az egész terület kattintható legyen */
+  padding: 16px 24px;  
+  color: #f8fafc; /* Szöveg színe */
+  text-decoration: none; /* Aláhúzás eltávolítása */
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease; /* Sima átmenet a hover effektekhez */
+  
+  
+}
+
+/* 4. Effektek, amikor a kurzor a menüpont fölé ér (Hover) */
+nav a:hover {
+  background-color: #a6deff; /* Kék háttérszín rámutatáskor */
+  color: #ffffff;
+}
+
+/* 5. Mobilbarát nézet (kisebb képernyőkre) */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column; /* Mobilon egymás alá rendezi a elemeket */
+    text-align: center;
+  }
+
+  nav a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  nav li:last-child a {
+    border-bottom: none; /* Az utolsó elem alól levesszük a vonalat */
+  }
+}

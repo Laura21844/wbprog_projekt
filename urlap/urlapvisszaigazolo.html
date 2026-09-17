@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foglalás Visszaigazolása</title>
+    <link rel="stylesheet" href="./urlap.css">
+    <style>
+        .result-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #e966c2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .result-item {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .result-item strong {
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../fooldal/fooldal.html">Vissza a Kezdőlapra</a></li>
+            <li><a href="urlap.html">Új foglalás</a></li>
+        </ul>
+    </nav>
+
+    <main class="form-wrapper">
+        <h2>Sikeres Időpontfoglalás!</h2>
+        <p>Köszönjük! Az alábbi adatokkal rögzítettük a foglalását:</p>
+        
+        <div class="result-card">
+            <div class="result-item"><strong>Név:</strong> <span id="resNev"></span></div>
+            <div class="result-item"><strong>E-mail:</strong> <span id="resEmail"></span></div>
+            <div class="result-item"><strong>Telefonszám:</strong> <span id="resTelefon"></span></div>
+            <div class="result-item"><strong>Szolgáltatás:</strong> <span id="resSzolgaltatas"></span></div>
+            <div class="result-item"><strong>Dátum:</strong> <span id="resDatum"></span></div>
+            <div class="result-item"><strong>Megjegyzés:</strong> <span id="resMegjegyzes"></span></div>
+        </div>
+    </main>
+
+    <script>
+        // Betöltéskor felolvassa az elmentett adatokat a localStorage-ből
+        window.addEventListener('DOMContentLoaded', () => {
+            const adatokJSON = localStorage.getItem('idopontFoglalas');
+            
+            if (adatokJSON) {
+                const adatok = JSON.parse(adatokJSON);
+                document.getElementById('resNev').textContent = adatok.nev;
+                document.getElementById('resEmail').textContent = adatok.email;
+                document.getElementById('resTelefon').textContent = adatok.telefon;
+                document.getElementById('resSzolgaltatas').textContent = adatok.szolgaltatas;
+                document.getElementById('resDatum').textContent = adatok.datum;
+                document.getElementById('resMegjegyzes').textContent = adatok.megjegyzes || "Nincs megadva megjegyzés";
+            }
+        });
+    </script>
+</body>
+</html>

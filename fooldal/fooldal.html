@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Főoldal</title>
+    <link rel="stylesheet" href="./fooldal.css">
+    <script src="../fooldal/fooldal.js" defer></script>
+</head>
+<body>
+
+
+    <!-- menusor -->
+    <nav>
+        <ul>
+    <li><a href="#">Kezdőlap</a></li>
+    <li><a href="#">Rólunk</a></li>
+    <li><a href="#">Szolgáltatások</a></li>
+    <li><a href="../urlap/urlap.html">Űrlap</a></li>
+        </ul>
+    </nav>
+
+    <!-- carousel -->
+     <div class="carousel-container">
+  <!-- 1. Dia -->
+  <div class="slide active">
+    <img src="https://picsum.photos/1200/450?random=1" alt="Első tulajdonság">
+    <div class="slide-caption">
+      <h3>Esküvői fotózás</h3>
+    </div>
+  </div>
+
+  <!-- 2. Dia -->
+  <div class="slide">
+    <img src="https://picsum.photos/1200/450?random=2" alt="Második tulajdonság">
+    <div class="slide-caption">
+      <h3>2. Reszponzív Megjelenés</h3>
+      
+    </div>
+  </div>
+
+  <!-- 3. Dia -->
+  <div class="slide">
+    <img src="https://picsum.photos/1200/450?random=3" alt="Harmadik tulajdonság">
+    <div class="slide-caption">
+      <h3>3. Interaktív Megoldások</h3>
+      <p>JavaScript alapon működő dinamikus funkciók.</p>
+    </div>
+  </div>
+
+  <!-- Léptető nyilak (Gombok) -->
+  <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+  <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+
+  <!-- Alsó pöttyök -->
+  <div class="dots-container">
+    <span class="dot active" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+  </div>
+</div>
+
+<!-- rolunk -->
+<!-- 1. RÓLUNK SZEKCIÓ (Külön, felül elhelyezve) -->
+<section id="rolunk" class="rolunk-section">
+  <div class="rolunk-container">
+    <h2>Rólunk</h2>
+    <p>
+      Minden párnak megvan a maga egyedi története – én segítek elmesélni. 
+      Szenvedélyem a természetes fények használata és a csodás, elkapott pillanatok dokumentálása. 
+      Nálam nem kell feszengnetek a kamera előtt: barátságos hangulatban, gördülékenyen örökítjük meg a legszebb emlékeiteket.
+    </p>
+  </div>
+</section>
+
+<!-- 2. SZOLGÁLTATÁSOK SZEKCIÓ  -->
+<section id="szolgaltatasok" class="cards-section">
+  <h2 class="section-title">Szolgáltatásaink</h2>
+  
+  <div class="cards-container">
+    
+    <!-- 1. Szolgáltatás Kártya -->
+    <div class="card">
+      <div class="card-header">
+        <h3>Jegyesfotózás</h3>
+      </div>
+      <div class="card-body">
+        <p>
+          Egy 1-2 órás kötetlen, szórakoztató fotózás az esküvő előtt. Segít ráhangolódni a kamerára, a képeket pedig felhasználhatjátok az esküvői meghívókhoz is.
+        </p>
+      </div>
+      <div class="card-footer">
+        <a href="../urlap/urlap.html" class="card-btn">Foglalás</a>
+      </div>
+    </div>
+
+    <!-- 2. Szolgáltatás Kártya -->
+    <div class="card">
+      <div class="card-header">
+        <h3>Párfotózás</h3>
+      </div>
+      <div class="card-body">
+        <p>
+          Kültéri vagy stúdióbeli sorozat évfordulóra vagy csak emlékbe. A köztetek lévő harmóniát és érzelmeket örökítjük meg teljesen laza környezetben.
+        </p>
+      </div>
+      <div class="card-footer">
+        <a href="../urlap/urlap.html" class="card-btn">Foglalás</a>
+      </div>
+    </div>
+
+    <!-- 3. Szolgáltatás Kártya -->
+    <div class="card">
+      <div class="card-header">
+        <h3>Esküvői Fotózás</h3>
+      </div>
+      <div class="card-body">
+        <p>
+          A nagy nap teljes körű dokumentálása a készülődéstől a szertartáson át az esti buliig. Kreatív párfotókkal és természetes riportképekkel.
+        </p>
+      </div>
+      <div class="card-footer">
+        <a href="../urlap/urlap.html" class="card-btn">Foglalás</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- velemenyek -->
+<!-- VÉLEMÉNYEK SZEKCIÓ ANIMÁCIÓVAL -->
+<section id="velemenyek" class="velemenyek-section">
+  <h2 class="section-title">Ügyfeleink mondták rólunk</h2>
+  
+  <div class="velemenyek-container">
+    
+    <!-- 1. Vélemény Kártya -->
+    <div class="velemeny-card fade-in">
+      <div class="velemeny-header">
+        <div class="csillagok">★★★★★</div>
+        <span class="ertekeles-szam">5.0 / 5.0</span>
+      </div>
+      <p class="velemeny-szoveg">
+        "A jegyesfotózásunk és az esküvőnk képei is csodálatosak lettek! Egyáltalán nem éreztük magunkat feszélyezve a kamera előtt, rendkívül laza és professzionális volt a hangulat."
+      </p>
+      <div class="velemeny-szerzo">
+        <div class="avatar">K&P</div>
+        <div>
+          <h4>Kovács Péter & Anna</h4>
+          <span>Esküvői fotózás</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Vélemény Kártya -->
+    <div class="velemeny-card fade-in">
+      <div class="velemeny-header">
+        <div class="csillagok">★★★★★</div>
+        <span class="ertekeles-szam">5.0 / 5.0</span>
+      </div>
+      <p class="velemeny-szoveg">
+        "Minden apró, őszinte pillanatot sikerült elkapni az esküvőnkön. A képek átadása is hihetetlenül gyors volt, a végeredményért pedig az egész család odavolt!"
+      </p>
+      <div class="velemeny-szerzo">
+        <div class="avatar">S&D</div>
+        <div>
+          <h4>Szabó Dóra & Bence</h4>
+          <span>Esküvői riport</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Vélemény Kártya -->
+    <div class="velemeny-card fade-in">
+      <div class="velemeny-header">
+        <div class="csillagok">★★★★★</div>
+        <span class="ertekeles-szam">5.0 / 5.0</span>
+      </div>
+      <p class="velemeny-szoveg">
+        "Évfordulós párfotózáson voltunk kültéren. A természetes fények és a helyszínválasztás is tökéletes volt. Örök emlék marad számunkra ez a délután!"
+      </p>
+      <div class="velemeny-szerzo">
+        <div class="avatar">N&T</div>
+        <div>
+          <h4>Nagy Tamás & Lili</h4>
+          <span>Párfotózás</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+  <!-- lablec -->
+
+  <footer class="site-footer">
+  <div class="footer-container">
+    
+    <!-- 1. Oszlop: Rólunk / Részletek -->
+    <div class="footer-col">
+      <h3>Weboldal Neve</h3>
+      <p>Készítette: Szűcs Laura és Balogh Viktória</p>
+    </div>
+
+    <!-- 2. Oszlop: Navigáció -->
+    <div class="footer-col">
+      <h4>Menü</h4>
+      <ul>
+        <li><a href="#">Kezdőlap</a></li>
+        <li><a href="#">Rólunk</a></li>
+        <li><a href="#">Szolgáltatások</a></li>
+        <li><a href="../urlap/urlap.html">Űrlap</a></li>
+      </ul>
+    </div>
+
+    <!-- 3. Oszlop: Kapcsolat -->
+    <div class="footer-col">
+      <h4>Kapcsolat</h4>
+      <p>Email: info@example.com</p>
+      <p>Tel: +36 1 234 5678</p>
+    </div>
+
+  </div>
+
+  <!-- Alsó sáv (Szerzői jog) -->
+  <div class="footer-bottom">
+    <p>&copy; 2026 Weboldal Neve. Minden jog fenntartva.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

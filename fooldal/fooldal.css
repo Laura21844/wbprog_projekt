@@ -1,64 +1,12 @@
-
-
-
-
-nav ul {
-  list-style: none; 
-  margin: 0;
-  padding: 0;
-  display: flex; 
-  background-color: #1e293b; 
-  border-radius: 5px; /* Lekerekített sarkok */
-  justify-content: baseline; 
-  gap: 20px;
-}
-
-
-
-
-nav a {
-  display: block; /* Hogy az egész terület kattintható legyen */
-  padding: 16px 24px;  
-  color: #f8fafc; /* Szöveg színe */
-  text-decoration: none; /* Aláhúzás eltávolítása */
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.3s ease; /* Sima átmenet a hover effektekhez */
-  
-  
-}
-
-/* 4. Effektek, amikor a kurzor a menüpont fölé ér (Hover) */
-nav a:hover {
-  background-color: #f0bfe5; /* Kék háttérszín rámutatáskor */
-  color: #ffffff;
-}
-
-/* 5. Mobilbarát nézet (kisebb képernyőkre) */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column; /* Mobilon egymás alá rendezi a elemeket */
-    text-align: center;
-  }
-
-  nav a {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  nav li:last-child a {
-    border-bottom: none; /* Az utolsó elem alól levesszük a vonalat */
-  }
-}
-
-
-
-/* carousel css */
-/* 1. Globális alapbeállítások */
+/* 1. GLOBÁLIS BEÁLLÍTÁSOK */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -66,29 +14,34 @@ body {
   background-color: #ffffff;
 }
 
-/* 2. NAVIGÁCIÓS MENÜ STÍLUSA */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* 2. NAVIGÁCIÓS MENÜ (Rögzített/Ragadós fejléc) */
 nav {
   width: 100%;
   background-color: #1e293b;
+  position: sticky; /* Rögzíti az elemet a görgetés során */
+  top: 0;           /* A képernyő legtetejére tapasztja */
+  z-index: 1000;    /* Biztosítja, hogy a többi tartalom felett maradjon */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Finom árnyék a jobb elválásért */
 }
 
 nav ul {
-  display: flex; /* Vízszintesen egymás mellé teszi a menüpontokat */
-  justify-content: center; /* Középre igazítja őket */
+  display: flex;
+  justify-content: center;
   align-items: center;
   list-style: none;
-  gap: 10px; /* Pontok közötti finom távolság */
+  gap: 10px;
   padding: 10px 0;
-}
-
-nav li {
   margin: 0;
 }
 
 nav a {
   display: block;
-  padding: 8px 16px; /* Kisebb gombok, hogy elférjenek egy sorban */
-  color:  #f0bfe5;
+  padding: 8px 16px;
+  color: #f0bfe5;
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
@@ -101,11 +54,11 @@ nav a:hover {
   color: #ffffff;
 }
 
-/* 3. KÉPLÉPTETŐ (CAROUSEL) STÍLUSA - NAGY MÉRET */
+/* 3. CAROUSEL (KÉPLÉPTETŐ) */
 .carousel-container {
   position: relative;
-  max-width: 1200px; /* Nagyobb szélesség (800px helyett) */
-  width: 95%;        /* Mobilon majdnem a teljes képernyőt kitölti */
+  max-width: 1200px;
+  width: 95%;
   margin: 40px auto;
   overflow: hidden;
   border-radius: 12px;
@@ -125,12 +78,11 @@ nav a:hover {
 
 .slide img {
   width: 100%;
-  height: 450px; /* Megnövelt magasság a jobb láthatóságért */
+  height: 450px;
   object-fit: cover;
   display: block;
 }
 
-/* Szöveges felirat a képeken */
 .slide-caption {
   position: absolute;
   bottom: 40px;
@@ -149,7 +101,7 @@ nav a:hover {
   to { opacity: 1; }
 }
 
-/* Léptető nyilak (Gombok) */
+/* Léptető nyilak */
 .prev-btn, .next-btn {
   position: absolute;
   top: 50%;
@@ -168,6 +120,7 @@ nav a:hover {
   transition: all 0.3s ease;
   user-select: none;
   z-index: 10;
+  outline: none;
 }
 
 .prev-btn { left: 20px; }
@@ -180,7 +133,7 @@ nav a:hover {
   transform: translateY(-50%) scale(1.1);
 }
 
-/* Alsó pöttyök */
+/* Pöttyök */
 .dots-container {
   position: absolute;
   bottom: 12px;
@@ -204,82 +157,7 @@ nav a:hover {
   background-color: #e966c2;
 }
 
-/* lablec */
-
-.site-footer {
-  background-color: #000000; /* Sötét háttér */
-  color: #f0bfe5; /* Halvány szövegszín */
-  padding-top: 40px;
-  font-family: Arial, sans-serif;
-  margin-top: 50px; /* Távolság a felette lévő tartalomtól */
-}
-
-/* Oszlopok elrendezése Flexbox-szal */
-.footer-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-/* Egy-egy oszlop stílusa */
-.footer-col {
-  flex: 1;
-  min-width: 220px;
-}
-
-.footer-col h3 {
-  color:  #f0bfe5;
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-
-.footer-col h4 {
-  color: #f0bfe5;
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-.footer-col p {
-  line-height: 1.6;
-  font-size: 14px;
-}
-
-/* Linkek listája */
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-col ul li {
-  margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-  color: #f0bfe5;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s ease;
-}
-
-.footer-col ul li a:hover {
-  color: #e966c2; /* Kék kiemelés rámutatáskor */
-}
-
-/* Alsó sáv */
-.footer-bottom {
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-  border-top: 1px solid #1e293b;
-  font-size: 13px;
-}
-
-/* RÓLUNK SZEKCIÓ (Felső blokk) */
+/* 4. RÓLUNK SZEKCIÓ */
 .rolunk-section {
   max-width: 900px;
   margin: 40px auto 20px auto;
@@ -304,7 +182,7 @@ nav a:hover {
   margin: 0;
 }
 
-/* SZOLGÁLTATÁSOK (3 Kártya egymás mellett) */
+/* 5. SZOLGÁLTATÁSOK (KÁRTYÁK) */
 .cards-section {
   max-width: 1200px;
   margin: 30px auto 50px auto;
@@ -325,7 +203,6 @@ nav a:hover {
   gap: 25px;
 }
 
-/* Egyedi Kártyák */
 .card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -388,25 +265,7 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* Mobil reszponzivitás */
-@media (max-width: 768px) {
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .card {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .rolunk-section {
-    margin: 20px;
-    padding: 20px;
-  }
-}
-
-/* VÉLEMÉNYEK SZEKCIÓ */
+/* 6. VÉLEMÉNYEK SZEKCIÓ */
 .velemenyek-section {
   max-width: 1200px;
   margin: 60px auto;
@@ -420,7 +279,6 @@ nav a:hover {
   gap: 25px;
 }
 
-/* Vélemény Kártya Stílus */
 .velemeny-card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -432,30 +290,20 @@ nav a:hover {
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid #e2e8f0;
-  border-top: 4px solid #e966c2; /* Rózsaszín kiemelés fent */
-  
-  /* Animációk beállítása */
-  animation: floatCard 4s ease-in-out infinite alternate; /* Finom lebegés */
+  border-top: 4px solid #e966c2;
+  animation: floatCard 4s ease-in-out infinite alternate;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Egymástól eltérő lebegési eltolás, hogy ne egyszerre mozduljanak */
-.velemeny-card:nth-child(2) {
-  animation-delay: 1s;
-}
+.velemeny-card:nth-child(2) { animation-delay: 1s; }
+.velemeny-card:nth-child(3) { animation-delay: 2s; }
 
-.velemeny-card:nth-child(3) {
-  animation-delay: 2s;
-}
-
-/* Hover effektus: Kiemelkedés és ragyogás */
 .velemeny-card:hover {
-  animation-play-state: paused; /* Hoverre megáll a lebegés */
+  animation-play-state: paused;
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 12px 25px rgba(233, 102, 194, 0.3);
 }
 
-/* Fejléc: Csillagok és értékelés */
 .velemeny-header {
   display: flex;
   justify-content: space-between;
@@ -464,7 +312,7 @@ nav a:hover {
 }
 
 .csillagok {
-  color: #f59e0b; /* Arany / sárga csillagok */
+  color: #f59e0b;
   font-size: 18px;
   letter-spacing: 2px;
 }
@@ -487,7 +335,6 @@ nav a:hover {
   flex-grow: 1;
 }
 
-/* Szerző infó (Monogram avatar + Név) */
 .velemeny-szerzo {
   display: flex;
   align-items: center;
@@ -520,43 +367,157 @@ nav a:hover {
   color: #64748b;
 }
 
-/* ANIMÁCIÓK (KEYFRAMES) */
-
-/* 1. Finom lebegő animáció */
 @keyframes floatCard {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-8px);
-  }
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
 }
 
-/* 2. Megjelenési animáció (Lapbetöltéskor) */
 .fade-in {
   animation: fadeIn 0.8s ease-out forwards, floatCard 4s ease-in-out infinite alternate;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; }
 }
 
-/* Mobilos elrendezés */
+/* 7. ELÉRHERŐSÉG ÉS TÉRKÉP SZEKCIÓ */
+.contact-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  padding: 25px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #e966c2;
+  border-radius: 12px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info h2 {
+  color: #1e293b;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: #334155;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.parking-info {
+  margin-top: 15px;
+  color: #64748b;
+}
+
+/* Kis kocka térkép */
+.contact-map-box {
+  width: 350px;
+  height: 230px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+  border: 2px solid #e966c2;
+}
+
+.contact-map-box iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* 8. LÁBLÉC */
+.site-footer {
+  background-color: #000000;
+  color: #f0bfe5;
+  padding-top: 40px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h3, .footer-col h4 {
+  color: #f0bfe5;
+  margin-bottom: 15px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #f0bfe5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #e966c2;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid #1e293b;
+  font-size: 13px;
+}
+
+/* 9. MOBIL RESZPONZIVITÁS */
 @media (max-width: 768px) {
-  .velemenyek-container {
+  nav ul {
+    flex-direction: column;
+  }
+
+  .cards-container, .velemenyek-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .velemeny-card {
+  .card, .velemeny-card {
     width: 100%;
     max-width: 100%;
-    animation: none; /* Mobilon kikapcsoljuk a lebegést a jobb teljesítményért */
+  }
+
+  .velemeny-card {
+    animation: none;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-map-box {
+    width: 100%;
+    height: 220px;
   }
 }

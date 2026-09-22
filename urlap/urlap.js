@@ -11,7 +11,7 @@ function UrlapBetoltes() {
     nevInput.name = "nev";
     nevInput.id = "nev";
     nevInput.required = true;
-    nevInput.minLength = 3; // Min. 3 karakter
+    nevInput.minLength = 3; 
     nevLabel.appendChild(nevInput);
 
     // 3. Elem: E-mail (email mező)
@@ -44,16 +44,16 @@ function UrlapBetoltes() {
     szolgalatSelect.required = true;
 
     const opcio1 = document.createElement('option');
-    opcio1.value = "Weboldal fejlesztés";
-    opcio1.textContent = "Weboldal fejlesztés";
+    opcio1.value = "Esküvői fotózás";
+    opcio1.textContent = "Esküvői fotózás";
 
     const opcio2 = document.createElement('option');
-    opcio2.value = "UI/UX Tanácsadás";
-    opcio2.textContent = "UI/UX Tanácsadás";
+    opcio2.value = "Jegyes fotózás";
+    opcio2.textContent = "Jegyes fotózás";
 
     const opcio3 = document.createElement('option');
-    opcio3.value = "Karbantartás";
-    opcio3.textContent = "Weboldal karbantartás";
+    opcio3.value = "Párfotózás";
+    opcio3.textContent = "Párfotózás";
 
     szolgalatSelect.appendChild(opcio1);
     szolgalatSelect.appendChild(opcio2);

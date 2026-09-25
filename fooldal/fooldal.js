@@ -34,7 +34,7 @@ function currentSlide(index) {
 document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentIndex);
     
-    // Opcionális: Automatikus váltás 5 másodpercenként
+    // valtozas 5 masodpercenkent
     setInterval(() => {
         changeSlide(1);
     }, 5000);

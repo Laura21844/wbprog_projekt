@@ -1,9 +1,9 @@
 function UrlapBetoltes() {
-    // 1. A form elem létrehozása
+    // form elem
     const urlap = document.createElement('form');
     urlap.id = "idopontForm";
 
-    // 2. Elem: Név (szöveges mező validációval)
+    //  a nev beirasahoz
     const nevLabel = document.createElement('label');
     nevLabel.textContent = "Teljes név: ";
     const nevInput = document.createElement('input');
@@ -14,7 +14,7 @@ function UrlapBetoltes() {
     nevInput.minLength = 3; 
     nevLabel.appendChild(nevInput);
 
-    // 3. Elem: E-mail (email mező)
+    // az email 
     const emailLabel = document.createElement('label');
     emailLabel.textContent = "E-mail cím: ";
     const emailInput = document.createElement('input');
@@ -24,7 +24,7 @@ function UrlapBetoltes() {
     emailInput.required = true;
     emailLabel.appendChild(emailInput);
 
-    // 4. Elem: Telefonszám (tel mező)
+    //a telefonszam
     const telLabel = document.createElement('label');
     telLabel.textContent = "Telefonszám: ";
     const telInput = document.createElement('input');
@@ -35,7 +35,7 @@ function UrlapBetoltes() {
     telInput.required = true;
     telLabel.appendChild(telInput);
 
-    // 5. Elem: Szolgáltatás kiválasztása (Select)
+    // a szolgaltatasnak a kivalasztasa gordolobol
     const szolgalatLabel = document.createElement('label');
     szolgalatLabel.textContent = "Választott szolgáltatás: ";
     const szolgalatSelect = document.createElement('select');
@@ -60,7 +60,7 @@ function UrlapBetoltes() {
     szolgalatSelect.appendChild(opcio3);
     szolgalatLabel.appendChild(szolgalatSelect);
 
-    // 6. Elem: Időpont kiválasztása 
+    // a datumnak a kivalasztasa
     const datumLabel = document.createElement('label');
     datumLabel.textContent = "Foglalás dátuma: ";
     const datumInput = document.createElement('input');
@@ -69,13 +69,13 @@ function UrlapBetoltes() {
     datumInput.id = "datum";
     datumInput.required = true;
 
-    // Dinamikus min. dátum beállítása 
+    // minimumot kell beallitani a datumra h a korabbit ne lehessen
     const ma = new Date().toISOString().split('T')[0];
     datumInput.min = ma;
 
     datumLabel.appendChild(datumInput);
 
-    // 7. Elem: Megjegyzés / Üzenet 
+    // megjegyzes
     const megjegyzesLabel = document.createElement('label');
     megjegyzesLabel.textContent = "Megjegyzés / Részletek: ";
     const megjegyzesTextarea = document.createElement('textarea');
@@ -84,12 +84,12 @@ function UrlapBetoltes() {
     megjegyzesTextarea.rows = 4;
     megjegyzesLabel.appendChild(megjegyzesTextarea);
 
-    // 8. Elem: Foglalás gomb
+    // gomb
     const kuldesGomb = document.createElement('input');
     kuldesGomb.type = "submit";
     kuldesGomb.value = "Időpont lefoglalása";
 
-    // Elemek csatolása a formhoz
+    // az elemek hozaadasa a formhoz
     urlap.appendChild(nevLabel);
     urlap.appendChild(emailLabel);
     urlap.appendChild(telLabel);
@@ -98,9 +98,9 @@ function UrlapBetoltes() {
     urlap.appendChild(megjegyzesLabel);
     urlap.appendChild(kuldesGomb);
 
-    // Eseménykezelő az űrlap beküldésére 
+  //urlap bekuldesswe
     urlap.addEventListener('submit', function (event) {
-        event.preventDefault(); // Megakadályozza a lap újratöltését
+        event.preventDefault(); //lap ujratolteset megekadalyozza
 
         const foglalasAdatok = {
             nev: document.getElementById('nev').value,
@@ -111,14 +111,14 @@ function UrlapBetoltes() {
             megjegyzes: document.getElementById('megjegyzes').value
         };
 
-        // Mentés a böngészőbe
+        // elmenti
         localStorage.setItem('idopontFoglalas', JSON.stringify(foglalasAdatok));
 
-        // Átirányítás az eredményző oldalra
+        // atiranyit
         window.location.href = 'urlapvisszaigazolo.html';
     });
 
-    // Űrlap beillesztése a tároló elembe
+    // az urlapot a zeredmenybe
     const container = document.getElementById('urlap-container');
     if (container) {
         container.appendChild(urlap);

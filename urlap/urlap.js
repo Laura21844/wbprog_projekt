@@ -60,7 +60,7 @@ function UrlapBetoltes() {
     szolgalatSelect.appendChild(opcio3);
     szolgalatLabel.appendChild(szolgalatSelect);
 
-    // 6. Elem: Időpont kiválasztása (Dátum validációval)
+    // 6. Elem: Időpont kiválasztása 
     const datumLabel = document.createElement('label');
     datumLabel.textContent = "Foglalás dátuma: ";
     const datumInput = document.createElement('input');
@@ -69,13 +69,13 @@ function UrlapBetoltes() {
     datumInput.id = "datum";
     datumInput.required = true;
 
-    // Dinamikus min. dátum beállítása (a mai nap)
+    // Dinamikus min. dátum beállítása 
     const ma = new Date().toISOString().split('T')[0];
     datumInput.min = ma;
 
     datumLabel.appendChild(datumInput);
 
-    // 7. Elem: Megjegyzés / Üzenet (Textarea)
+    // 7. Elem: Megjegyzés / Üzenet 
     const megjegyzesLabel = document.createElement('label');
     megjegyzesLabel.textContent = "Megjegyzés / Részletek: ";
     const megjegyzesTextarea = document.createElement('textarea');
@@ -98,7 +98,7 @@ function UrlapBetoltes() {
     urlap.appendChild(megjegyzesLabel);
     urlap.appendChild(kuldesGomb);
 
-    // Eseménykezelő az űrlap beküldésére (Adatok mentése localStorage-be)
+    // Eseménykezelő az űrlap beküldésére 
     urlap.addEventListener('submit', function (event) {
         event.preventDefault(); // Megakadályozza a lap újratöltését
 
